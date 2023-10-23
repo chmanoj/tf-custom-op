@@ -173,6 +173,11 @@ if is_windows; then
   SHARED_LIBRARY_NAME=${SHARED_LIBRARY_NAME//\\//}
   HEADER_DIR=${HEADER_DIR//\\//}
 fi
+
+HEADER_DIR="C:/workdir/my_op/venv/lib/site-packages/tensorflow/include"
+SHARED_LIBRARY_PATH="C:/workdir/my_op/venv/lib/site-packages/tensorflow/python"
+SHARED_LIBRARY_NAME="_pywrap_tensorflow_internal.lib"
+
 write_action_env_to_bazelrc "TF_HEADER_DIR" ${HEADER_DIR}
 write_action_env_to_bazelrc "TF_SHARED_LIBRARY_DIR" ${SHARED_LIBRARY_DIR}
 write_action_env_to_bazelrc "TF_SHARED_LIBRARY_NAME" ${SHARED_LIBRARY_NAME}

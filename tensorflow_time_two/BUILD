@@ -5,7 +5,7 @@ load("@local_config_cuda//cuda:build_defs.bzl", "if_cuda_is_configured", "if_cud
 
 config_setting(
     name = "windows",
-    constraint_values = ["@bazel_tools//platforms:windows"],
+    constraint_values = ["@platforms//os:windows"],
 )
 
 cc_library(

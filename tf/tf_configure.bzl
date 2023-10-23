@@ -118,6 +118,7 @@ def _symlink_genrule_for_dir(
         genrule_name,
         src_files = [],
         dest_files = [],
+	add_cp_cmd = False,
         tf_pip_dir_rename_pair = []):
     """Returns a genrule to symlink(or copy if on Windows) a set of files.
 
@@ -169,9 +170,18 @@ def _symlink_genrule_for_dir(
             command.append(cmd + ' "%s" "%s"' % (src_files[i], dest))
             outs.append('        "' + dest_dir + dest_files[i] + '",')
     dest_dir = "abc"
+
+    command_str = ""
+    if add_cp_cmd:
+        command_str = command_str + "mkdir -p '$(@D)' && cp -r 'C:/workdir/my_op/venv/lib/site-packages/tensorflow/include' '$(@D)' && ls '$(@D)'"
+        # command_str = " && ".join(command)
+    else:
+        command_str = " && ".join(command)
+
     genrule = _genrule(
         genrule_name,
-        " && ".join(command),
+        command_str,
+        #" && ".join(command),
         "\n".join(outs),
     )
     return genrule
@@ -183,6 +193,7 @@ def _tf_pip_impl(repository_ctx):
         tf_header_dir,
         "include",
         "tf_header_include",
+	add_cp_cmd = True,
         tf_pip_dir_rename_pair = ["tensorflow_core", "tensorflow"]
     )
 

@@ -18,6 +18,10 @@ limitations under the License.
 #endif  // GOOGLE_CUDA
 
 #include "time_two.h"
+
+#include "absl/base/config.h"
+#undef ABSL_HAVE_STD_STRING_VIEW
+
 #include "tensorflow/core/framework/op_kernel.h"
 
 namespace tensorflow {
