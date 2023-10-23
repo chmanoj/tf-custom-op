@@ -13,8 +13,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
+/*
 #include "absl/base/config.h"
-#undef ABSL_HAVE_STD_STRING_VIEW
+#define ABSL_HAVE_STD_STRING_VIEW 1
+*/
 
 #include "tensorflow/core/framework/op_kernel.h"
 

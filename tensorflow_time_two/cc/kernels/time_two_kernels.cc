@@ -13,14 +13,17 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
+/*
+#include "absl/base/config.h"
+#define ABSL_HAVE_STD_STRING_VIEW 1
+*/
+
+
 #if GOOGLE_CUDA
 #define EIGEN_USE_GPU
 #endif  // GOOGLE_CUDA
 
 #include "time_two.h"
-
-#include "absl/base/config.h"
-#undef ABSL_HAVE_STD_STRING_VIEW
 
 #include "tensorflow/core/framework/op_kernel.h"
 
