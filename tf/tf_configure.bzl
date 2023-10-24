@@ -173,7 +173,7 @@ def _symlink_genrule_for_dir(
 
     command_str = ""
     if add_cp_cmd:
-        command_str = command_str + "mkdir -p '$(@D)' && cp -r 'C:/workdir/my_op_2/custom-op/venv_clean/lib/site-packages/tensorflow/include' '$(@D)' && ls '$(@D)'"
+        command_str = command_str + "mkdir -p '$(@D)' && cp -r 'C:/workdir/my_op_2/custom-op/venv_py38/lib/site-packages/tensorflow/include' '$(@D)' && ls '$(@D)'"
         # command_str = " && ".join(command)
     else:
         command_str = " && ".join(command)

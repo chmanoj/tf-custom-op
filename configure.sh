@@ -174,8 +174,8 @@ if is_windows; then
   HEADER_DIR=${HEADER_DIR//\\//}
 fi
 
-HEADER_DIR="C:/workdir/my_op_2/custom-op/venv_clean/lib/site-packages/tensorflow/include"
-SHARED_LIBRARY_PATH="C:/workdir/my_op_2/custom-op/venv_clean/lib/site-packages/tensorflow/python"
+HEADER_DIR="C:/workdir/my_op_2/custom-op/venv_py38/lib/site-packages/tensorflow/include"
+SHARED_LIBRARY_PATH="C:/workdir/my_op_2/custom-op/venv_py38/lib/site-packages/tensorflow/python"
 SHARED_LIBRARY_NAME="_pywrap_tensorflow_internal.lib"
 
 
