@@ -25,7 +25,7 @@ from setuptools.dist import Distribution
 
 __version__ = '0.0.1'
 REQUIRED_PACKAGES = [
-    'tensorflow-cpu == 2.10.0',
+    'tensorflow == 2.10.0',
 ]
 project_name = 'tensorflow-custom-ops'
 
