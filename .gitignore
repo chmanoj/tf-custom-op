@@ -3,3 +3,5 @@ bazel-bin/*
 bazel-custom-op/*
 bazel-out/*
 venv*/*
+*.un~
+*~
